@@ -1,30 +1,34 @@
-package ec.edu.ups.poo;
+package ec.edu.ups.poo.clases;
+import ec.edu.ups.poo.enums.TipoDireccion;
 
 public class Direccion {
-    private String tipo;
+
+    private TipoDireccion tipoDireccion;
     private String callePrincipal;
     private String numeracion;
     private String ciudad;
     private String provincia;
     private String pais;
 
-    public Direccion(String tipo, String callePrincipal, String numeracion, String ciudad, String provincia, String pais) {
-        this.tipo = tipo;
+    public Direccion(TipoDireccion tipoDireccion,String callePrincipal, String numeracion, String ciudad, String provincia, String pais) {
+
         this.callePrincipal = callePrincipal;
         this.numeracion = numeracion;
         this.ciudad = ciudad;
         this.provincia = provincia;
         this.pais = pais;
+        this.tipoDireccion = TipoDireccion.INSTITUCION;
     }
 
     public Direccion() {
 
     }
-    public String getTipo() {
-        return tipo;
+
+    public TipoDireccion getTipoDireccion() {
+        return tipoDireccion;
     }
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setTipoDireccion(TipoDireccion tipoDireccion) {
+        this.tipoDireccion = tipoDireccion;
     }
     public String getCallePrincipal() {
         return callePrincipal;
@@ -58,7 +62,8 @@ public class Direccion {
     }
     @Override
     public String toString() {
-        return "\nDireccion :" + tipo +
+
+        return  "\nTipo de Direccion: " +tipoDireccion +
                 "\nCalle Principal :" + callePrincipal +
                 "\nNumeración :" + numeracion +
                 "\nCiudad: " + ciudad +
@@ -66,5 +71,6 @@ public class Direccion {
                 "\nPaís: " + pais;
     }
 }
-
+// Relacion de mucho a muchos, y en esta relacion tengo informacion
+// Tengo que crear una clase intermedia
 

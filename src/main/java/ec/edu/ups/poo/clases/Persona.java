@@ -1,4 +1,5 @@
-package ec.edu.ups.poo;
+package ec.edu.ups.poo.clases;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Persona {
@@ -9,15 +10,17 @@ public class Persona {
     private String correoElectronico;
     private List<Direccion> direcciones;
 
-    public Persona(String cedula, String nombre,String apellido, String telefono, String correoElectronico, List<Direccion> direcciones) {
+    public Persona(String cedula, String nombre,String apellido, String telefono, String correoElectronico) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.correoElectronico = correoElectronico;
-        this.direcciones = direcciones;
+        this.direcciones = new ArrayList<Direccion>();
+
     }
     public Persona () {
+        this.direcciones = new ArrayList<Direccion>();
     }
 
     public String getCedula() {return cedula;}
@@ -30,17 +33,27 @@ public class Persona {
     public void setTelefono(String telefono) {this.telefono = telefono;}
     public String getCorreoElectronico() {return correoElectronico;}
     public void setCorreoElectronico(String correoElectronico) {this.correoElectronico = correoElectronico;}
-    public List<Direccion> getDirecciones() {return direcciones;}
-    public void setDirecciones(List<Direccion> direcciones) {this.direcciones = direcciones;}
+
+    public void addDireccion(Direccion direccion) {
+        // objetivo: ir agregando la direccion una a una a la lista de direcciones
+        direcciones.add(direccion);
+    }
+    public List<Direccion> getDirecciones() {
+        return direcciones;
+    }
 
     @Override
     public String toString() {
-        return "\nCédula: " + cedula +
-                "\nNombre: " + nombre +
-                "\nApellido: " + apellido +
-                "\nTeléfono: " + telefono +
-                "\nCorreo Eléctronico: " + correoElectronico +
-                "\nDirecciones: " + direcciones;
+        return "Persona{" +
+                "Cedula='" + cedula + '\'' +
+                ", Nombre='" + nombre + '\'' +
+                ", Apellido='" + apellido + '\'' +
+                ", Telefono='" + telefono + '\'' +
+                ", CorreoElectronico='" + correoElectronico + '\'' +
+                ", Direcciones=" + direcciones +
+                '}';
     }
 }
 
+// cuando es agregacion y composicion - no puedo pasar la lista a los getter y setters
+// solo cuando es ASOCIACION
