@@ -17,7 +17,7 @@ public class Direccion {
         this.ciudad = ciudad;
         this.provincia = provincia;
         this.pais = pais;
-        this.tipoDireccion = TipoDireccion.INSTITUCION;
+        this.tipoDireccion = tipoDireccion;
     }
 
     public Direccion() {

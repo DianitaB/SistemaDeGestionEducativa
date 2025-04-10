@@ -44,14 +44,12 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" +
-                "Cedula='" + cedula + '\'' +
-                ", Nombre='" + nombre + '\'' +
-                ", Apellido='" + apellido + '\'' +
-                ", Telefono='" + telefono + '\'' +
-                ", CorreoElectronico='" + correoElectronico + '\'' +
-                ", Direcciones=" + direcciones +
-                '}';
+        return "Persona{Cedula='" + cedula +
+                "', Nombre='" + nombre +
+                "', Apellido='" + apellido +
+                "', Telefono='" + telefono +
+                "', CorreoElectronico='" + correoElectronico +
+                "', Direcciones=" + direcciones + "}";
     }
 }
 
